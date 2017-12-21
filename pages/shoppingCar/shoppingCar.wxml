@@ -1,0 +1,115 @@
+<view class="main">
+<view class="header" wx:if="{{productShow}}">
+    <view class="address-container" bindtap="toChangAddress">
+        <image class="address-image" src="../../img/Address.png" mode="widthFix"></image>
+        <view class="address-deatil">{{default_address}}</view>
+        <view class="clear"></view>
+        <image style="visibility: hidden" class="address-image" src="../../img/Address.png" mode="widthFix"></image>
+        <view class="address-deatil address-deatil2">（点击修改默认收货地址）</view>
+        <view class="clear"></view>
+    </view>
+</view>
+
+<view class="section" wx:for="{{carts}}">
+    <view class="main" wx:if="{{productShow}}">
+        <view class="container">
+            <image  src="../../img/close.png" bindtap="deleteProduct" mode="widthFix" class="close" data-index="{{index}}" data-id="{{item.cart_id}}"></image>
+            <view class="container-left">
+               
+                <icon  wx:if="{{item.checked}}" type="success" color="#F76260" data-index="{{index}}" bindtap="checkProduct" class="checks" mode="widthFix" />
+                <icon wx:else data-index="{{index}}" type="circle" bindtap="checkProduct" class="checks" mode="widthFix" />
+                <image src="{{item.goods_images}}" class="product-img" mode="widthFix"></image>
+            </view>
+            <view class="container-right">
+                <view class="product-name">
+                    <view class="product-name-left">{{item.goods_name}}</view>
+                    <view class="product-name-right">(库存：{{item.goods_stock}})</view>
+                    <view class="clear"></view>
+                </view>
+                <view class="product-desc">
+                    {{item.goods_intro}}
+                </view>
+                <view class="container-right-bottom">
+                    <view class="container-right-bottom-left">
+                        <view class="cal">
+                            <view class="cals cal-left" data-index="{{index}}" bindtap="reduceNum">-</view>
+                            <view class="cals cal-mid"><input type="text" data-index="{{index}}" bindinput = "changeNum" value="{{item.cart_num}}" /></view>
+                            <view class="cals cal-right" data-index="{{index}}" bindtap="addNum">+</view>
+                            <view class="clear"></view>
+                        </view>
+                    </view>
+                    <view class="container-right-bottom-right">
+                        ￥{{item.goods_price*item.cart_num}}
+                    </view>
+                    <view class="clear"></view>
+                </view>
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</view>
+
+
+
+<view class="empty"  wx:if="{{emptyShow}}">
+    <image src="../../img/remind.png"  mode="widthFix"></image>
+    <view class="empty-tip">你的购物车里面没有商品</view>
+    <view class="empty-tip">快去挑选吧</view>
+    
+    <view class="goto" bindtap="toIndex">
+        去挑选
+    </view>
+   
+    
+</view>
+
+
+<view class="seat"></view>
+<view class="footer-top"  wx:if="{{productShow}}">
+    <view class="footer-top-left">
+        <view class="footer-top-left-view">
+            <icon  wx:if="{{checkAll}}" bindtap="checkAll" type="success" color="#F76260" class="allcheck" />
+            <icon wx:else  bindtap="checkAll" type="circle"  class="allcheck" />
+        </view>
+        <view class="footer-top-left-view footer-top-left-view1">
+            全选
+        </view>
+        <view class="footer-top-left-view footer-top-left-view2">
+            合计：
+        </view>
+        <view class="footer-top-left-view footer-top-left-view3">
+            {{totalPrice}}元
+        </view>
+
+    </view>
+    <view class="footer-top-right" bindtap="immybuy">暂不支持购买</view>
+    <view class="clear"></view>
+</view>
+<view class="footer">
+
+    <view class="footer-nav" bindtap="toIndex">
+        <view>
+            <image class="footer-img" src="../../img/index.png"   mode="widthFix"></image>
+        </view>
+        <view class="nav-name">首页</view>
+    </view>
+
+
+    <view class="footer-nav" bindtap="toCart">
+        <view>
+            <image class="footer-img" src="../../img/shopping-car-active.png"   mode="widthFix"></image>
+        </view>
+        <view class="nav-name nav-name-active">购物车</view>
+    </view>
+
+
+    <view class="footer-nav" bindtap="toAccount">
+        <view>
+            <image class="footer-img" src="../../img/account.png"   mode="widthFix"></image>
+        </view>
+        <view class="nav-name">账户</view>
+    </view>
+
+    
+</view>
+</view>

@@ -1,0 +1,38 @@
+.clear{
+    clear: both
+}
+.header{
+    width: 96%;padding: 40rpx 0;padding-left:4%;font-size: 30rpx;background-color: #F5F5F5;color: #434343
+}
+.address-section-name{
+    width: 60%;float: left;text-align: left;font-weight: bold;font-size: 30rpx
+}
+.address-section-default{
+    width: 40%;float: left;text-align: right;
+}
+.address-section-default .checks{
+    vertical-align: middle
+}
+.address-section-container{
+    width: 92%;margin-left: 4%;font-size: 25rpx;padding: 30rpx 0
+}
+.address-detail{
+    padding: 30rpx 0;
+}
+.address-edits{
+    padding: 10rpx 0
+}
+.address-edits2{
+    padding: 15rpx 35rpx;border: 1px solid gray;float: right;border-radius: 5px;margin-left: 30rpx;color: gray
+}
+.address-section{
+    border-bottom: 1px solid gainsboro
+}
+
+
+.seat{
+    height: 100rpx;width: 100%
+}
+.footer{
+    height: 100rpx;line-height: 100rpx;width: 100%;position: fixed;background-color: #F76260;color: #ffffff;text-align: center;bottom: 0;font-size: 30rpx
+}

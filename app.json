@@ -1,0 +1,26 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/test/test",
+        "pages/logs/logs",
+        "pages/product/product",
+        "pages/allProduct/allProduct",
+        "pages/hotProduct/hotProduct",
+        "pages/shoppingCar/shoppingCar",
+        "pages/account/account",
+        "pages/address/address",
+        "pages/addAddress/addAddress",
+        "pages/editAddress/editAddress",
+        "pages/orderFukuan/orderFukuan",
+        "pages/orderPinjia/orderPinjia",
+        "pages/orderShouhou/orderShouhou",
+        "pages/orderShouhuo/orderShouhuo",
+        "pages/orderFahuo/orderFahuo"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "新海铺子",
+        "navigationBarTextStyle": "black"
+    }
+}

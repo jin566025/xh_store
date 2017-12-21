@@ -1,0 +1,39 @@
+<view class="header">
+    <view class="header-nav">
+        <view class="header-navs" bindtap='tofukuan'>待付款</view>
+        <view class="header-navs" bindtap='tofahuo'>待发货</view>
+        <view class="header-navs" bindtap='toshouhuo'>待收货</view>
+        <view class="header-navs" bindtap='topinjia'>待评价</view>
+        <view class="header-navs header-navs-active" bindtap='toshouhou'>售后</view>
+        <view class="clear"></view>
+    </view>
+</view>
+<view class="main" wx:if="{{datastatus}}">
+    <image src="../../img/remind.png"  mode="widthFix"></image>
+    <view class='tips'>尚未开放，敬请期待</view>
+</view>
+<view class="hasData" wx:if="{{datastatus==false}}">
+    <view class="content" data-id="{{item.order_id}}" data-code="{{item.order_code}}" wx:for="{{contentlist}}">
+        <view class="section" wx:for="{{item.goods}}">
+            <view class="section-left">
+                <view class="section-left-image">
+                    <image src='{{item.goods_images}}' mode="widthFix"></image>
+                </view>
+                
+            </view>
+            <view class="section-right">
+                <view class="name">{{item.goods_name}}</view>
+                <view class="name name2">{{item.goods_intro}}</view>
+                <view class="price-num">
+                    <view class="num">￥{{item.goods_price}}</view>
+                    <view class="price">x {{item.num}}</view>
+                </view>
+            </view>
+            <view class='clear'></view>
+        </view>
+
+    </view>
+
+</view>
+<view class="tips" wx:if="{{hasMoreData}}">加载更多...</view>
+<view class="tips" wx:else></view>

@@ -1,0 +1,119 @@
+<!--index.wxml-->
+<swiper id="swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"  mode="widthFix"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<scroll-view class="scroll-view_H" scroll-x style="width: 96%;margin:20rpx 2%">
+    <view id="green" class="scroll-view-item_H bc_green">
+        <image src="../../img/e.jpg"></image>
+    </view>
+    <view class="scroll-view-item_H bc_mid">
+        <image src="../../img/zanwei.jpg"></image>
+    </view>
+    <view id="red"  class="scroll-view-item_H bc_red">
+        <image src="../../img/f.jpg"></image>
+    </view>
+  
+</scroll-view>
+<view class="hr"></view>
+<view class="section">
+    <view class="section-head">
+        <view class="section-head-left">
+            <view class="section-head-left-top">BEST SELLER<text class="hide">占</text></view>
+            <view class="section-head-left-bottom">热销商品</view>
+        </view>
+        <navigator url="/pages/hotProduct/hotProduct" hover-class="navigator-hover">
+            <view class="section-head-right">...</view>
+        </navigator>
+        <view class="clear"></view>
+    </view>
+    <view class="section-main">
+        <view class="products">
+            <view wx:for="{{hotgoods}}" class="product product-left" bindtap="getGoodId" data-id="{{item.goods_id}}">
+                <view class="product-img" >
+                    <image class="product-imgs" src="{{item.goods_images}}"  mode="widthFix"></image>
+                </view>
+                <view class="product-name">
+                    <text>{{item.goods_name}}</text>
+                </view>
+                <view class="product-price">
+                    <text>￥{{item.goods_price}}</text>
+                </view>              
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</view>
+<view class="hr"></view>
+<view class="section">
+    <view class="section-head">
+        <view class="section-head-left">
+            <view class="section-head-left-top">ALL PRODUCT<text class="hide">占</text></view>
+            <view class="section-head-left-bottom">所有商品</view>
+        </view>
+        <navigator url="/pages/allProduct/allProduct" hover-class="navigator-hover">
+            <view class="section-head-right">...</view>
+        </navigator>
+        <view class="clear"></view>
+    </view>
+    <view class="section-main">
+         <view class="products">
+ 
+            <view wx:for="{{allgoods}}" class="product product-left" bindtap="getGoodId" data-id="{{item.goods_id}}">
+                <view class="product-img">
+                    <image class="product-imgs" src="{{item.goods_images}}"  mode="widthFix"></image>
+                </view>
+                <view class="product-name">
+                    <text>{{item.goods_name}}</text>
+                </view>
+                <view class="product-price">
+                    <text>￥{{item.goods_price}}</text>
+                </view>              
+            </view>
+
+
+            <view class="clear"></view>
+        </view>
+        
+    </view>
+</view>
+<view class="btn-area">
+  
+</view>
+<view class="seat"></view>
+<view class="footer">
+
+    <view class="footer-nav" bindtap="toIndex">
+        <view>
+            <image class="footer-img" src="../../img/index-active.png"   mode="widthFix"></image>
+        </view>
+        <view class="nav-name nav-name-active">首页</view>
+    </view>
+
+    <view class="footer-nav" bindtap="toCart">
+        <view>
+            <image class="footer-img" src="../../img/shopping-car.png"   mode="widthFix"></image>
+        </view>
+        <view class="nav-name">购物车</view>
+    </view>
+
+    <view class="footer-nav" bindtap="toAccount">
+        <view>
+            <image class="footer-img" src="../../img/account.png"   mode="widthFix"></image>
+        </view>
+        <view class="nav-name">账户</view>
+    </view>
+
+    
+</view>
+
+<view class="super-code">
+  <view>
+    <text>{{code}}</text>
+  </view>
+</view>

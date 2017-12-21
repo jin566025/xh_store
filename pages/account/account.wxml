@@ -1,0 +1,79 @@
+<view class="header">
+    <view class="header-img">
+        <image src="{{headeimg}}" mode="widthFix"></image>
+    </view>
+    <view class="header-name">{{nickname}}</view>
+</view>
+
+
+<view class="nav">
+    <navigator url='/pages/orderFukuan/orderFukuan'>
+        <view class="navs">
+            <image src="../../img/Payment.png"  mode="widthFix"></image>
+            <view class="navs-title">待付款</view>
+        </view>
+    </navigator>
+    <navigator url='/pages/orderFahuo/orderFahuo'>
+        <view class="navs">
+            <image src="../../img/Payment_ship.png"  mode="widthFix"></image>
+            <view class="navs-title">待发货</view>
+        </view>
+    </navigator>
+    <navigator url='/pages/orderShouhuo/orderShouhuo'>
+        <view class="navs">
+            <image src="../../img/Payment_receive.png"  mode="widthFix"></image>
+            <view class="navs-title">待收货</view>
+        </view>
+    </navigator>
+    <navigator url='/pages/orderPinjia/orderPinjia'>
+        <view class="navs">
+            <image src="../../img/Already_receive.png"  mode="widthFix"></image>
+            <view class="navs-title">待评价</view>
+        </view>
+    </navigator>
+    <navigator url='/pages/orderShouhou/orderShouhou'>
+        <view class="navs">
+            <image src="../../img/Customer_service.png"  mode="widthFix"></image>
+            <view class="navs-title">售后</view>
+        </view>
+        <view class="clear"></view>
+    </navigator>
+</view>
+
+<view bindtap="toAddress" class="address">
+    <view class="address-float">
+        <image src="../../img/Address.png"   mode="widthFix"></image>
+    </view>
+    <view class="address-float">地址管理</view>
+    <view class="clear"></view>
+</view>
+
+
+<view class="seat"></view>
+<view class="footer">
+
+
+    <view class="footer-nav"  bindtap="toIndex">
+        <view>
+            <image class="footer-img" src="../../img/index.png"  mode="widthFix"></image>
+        </view>
+        <view class="nav-name ">首页</view>
+    </view>
+
+    <view class="footer-nav"  bindtap="toCart">
+        <view>
+            <image class="footer-img" src="../../img/shopping-car.png"   mode="widthFix"></image>
+        </view>
+        <view class="nav-name">购物车</view>
+    </view>
+
+
+    <view class="footer-nav"  bindtap="toAccount">
+        <view>
+            <image class="footer-img" src="../../img/account-active.png"   mode="widthFix"></image>
+        </view>
+        <view class="nav-name nav-name-active">账户</view>
+    </view>
+
+    
+</view>

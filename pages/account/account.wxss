@@ -1,0 +1,55 @@
+.clear{
+    clear: both
+}
+.header-img,.header-name{
+    display: inline-block;vertical-align: middle;height: 260rpx;line-height: 260rpx;
+}
+
+.header-img{
+    height: 180rpx;margin-left: 10%;border-radius: 50%;line-height: 180rpx
+}
+.header-img image{
+    width: 180rpx;vertical-align: middle;border-radius: 50%
+}
+
+.header-name{
+    margin-left: 50rpx
+}
+.seat{
+    height: 150rpx
+}
+.footer{
+    height: 120rpx;position: fixed;bottom: 0;width: 100%;background-color: #ffffff;border-top: 1px solid gainsboro
+}
+
+.footer-nav{
+    width: 33.3%;float: left;height: 100%;text-align: center
+}
+.footer-img{
+    width: 45rpx;margin-top: 25rpx;margin-bottom: 5rpx
+}
+.nav-name{
+    font-size: 20rpx;color: #BEBEBE
+}
+.nav-name-active{
+    color: #000000
+}
+
+.navs{
+    width: 20%;float: left;text-align: center;padding: 30rpx 0;background-color: #F5F5F5
+}
+.navs image{
+    width: 50rpx
+}
+.navs-title{
+    font-size: 25rpx
+}
+.address{
+    padding:40rpx 0;border-bottom: 1px solid gainsboro
+}
+.address-float{
+    display: inline-block;height: 50rpx;line-height: 50rpx;font-size: 30rpx;margin-left: 30rpx
+}
+.address image{
+    width:50rpx;vertical-align: middle;
+}

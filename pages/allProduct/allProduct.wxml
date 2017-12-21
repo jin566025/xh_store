@@ -1,0 +1,25 @@
+<!--pages/allProduct/allProduct.wxml-->
+<view class="section">
+    <view class="section-head">
+        <view class="section-head-left">所有商品</view>
+        <view class="section-head-right">ALL PRODUCT</view>
+        <view class="clear"></view>
+    </view>
+    <view class="section-main">
+        <view class="products">
+            <view wx:for="{{goods}}" class="product product-left" bindtap="getGoodId" data-id="{{item.goods_id}}">
+                <view class="product-img" >
+                    <image class="product-imgs" src="{{item.goods_images}}"  mode="widthFix"></image>
+                </view>
+                <view class="product-name">
+                    <text>{{item.goods_name}}</text>
+                </view>
+                <view class="product-price">
+                    <text>￥{{item.goods_price}}</text>
+                </view>              
+            </view>
+            <view class="clear"></view>
+        </view>
+    </view>
+</view>
+

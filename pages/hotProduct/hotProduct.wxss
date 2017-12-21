@@ -1,0 +1,95 @@
+/**index.wxss**/
+.clear{
+  clear: both
+}
+.section{
+  width: 96%;margin: 0 auto;font-size: 30rpx
+}
+.section-head{
+    margin: 20px 0
+}
+.section-head-left,.section-head-right{
+  float: left;width: 50%;font-size: 30rpx
+}
+
+.section-head-right{
+  text-align: right;
+}
+.section-head-left-top{
+  letter-spacing: 5rpx;padding: 10rpx 0;border-bottom: 3rpx solid #BDBDBD;display: inline-block
+}
+.section-head-left-bottom{
+  letter-spacing: 5rpx;padding: 10rpx 0;
+}
+.hide{
+  visibility: hidden
+}
+.super-code{
+  display: none
+}
+
+.products{
+    margin-top: 40rpx
+}
+.product{
+    width: 46%;text-align: center;margin: 0 2%;padding-bottom: 50rpx
+}
+.product-left{
+    float: left;
+}
+.product-right{
+    float: right;
+}
+.product-img{
+    width: 100%;height: 100%;background-color: #E9E9EC;border-radius: 5px;overflow: hidden
+}
+.product-img image{
+    width: 100%
+}
+
+.product-name{
+    font-size: 30rpx;margin: 15rpx 0
+}
+.product-price{
+    font-size: 25rpx
+}
+
+.hr{
+    width: 100%;height: 1px;background-color: gainsboro;margin: 40rpx 0
+}
+
+.seat{
+    height: 150rpx
+}
+.footer{
+    height: 120rpx;position: fixed;bottom: 0;width: 100%;background-color: #ffffff;border-top: 1px solid gainsboro
+}
+
+.footer-nav{
+    width: 33.3%;float: left;height: 100%;text-align: center
+}
+.footer-img{
+    width: 45rpx;margin-top: 25rpx;margin-bottom: 5rpx
+}
+.nav-name{
+    font-size: 20rpx;color: #BEBEBE
+}
+.nav-name-active{
+    color: #000000
+}
+.slide-image{
+    width: 100%
+}
+
+.scroll-view-item_H{
+   display: inline-block;width: 70%;
+}
+.scroll-view-item_H image{
+    width: 100%;border-radius: 5px
+}
+.bc_mid{
+    width: 5%;visibility: hidden
+}
+.scroll-view_H{
+    white-space: nowrap;margin-top: 30rpx;height: 150px
+}

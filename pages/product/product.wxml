@@ -1,0 +1,212 @@
+<!-- banner -->
+<view class='color'>
+    <image src='../../img/color.png' mode='widthFix' bindtap='changeColor'></image>
+</view>
+<view class='color-shadow' bindtap='closecolors' wx:if="{{colorshow}}"></view>
+<view class='color-select' wx:if="{{colorshow}}">
+    <view wx:for="{{colors}}" class='colors' bindtap='closecolors' data-name='{{item}}'>{{item}}</view>
+
+    <view class='clear'></view>
+</view>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="detail">
+<text class="title">{{goods_name}}</text>
+<text class="title2">{{goods_describe}}</text>
+<text wx:if="{{haszhekou}}" class="price">折扣价:￥{{discount_price}}</text>
+<text wx:if="{{haszhekou}}" class="price price2">原价：￥{{price}}</text>
+<text wx:if="{{haszhekou==false}}" class='price'>价格：￥{{price}}</text>
+</view>
+<view class="separate"></view>
+<!-- sku选择 -->
+
+<text class="product-information">商品信息</text>
+<view class="product-main">
+<view class="product-main-center">激情生活新海制造</view>
+<view class="product-main-center">PASSIONATE LIFE CREATED BY XINHAI</view>
+<image class="product-main-img" src="{{imgUrls[0]}}" mode='widthFix'></image>
+<view class="product-groups">  
+    <view class="product-main-center">规格参数</view>
+    <view class="product-main-center">SPECIFICATIONS</view>
+    <view class="product-groups-main">
+        <view class="product-groups-main-container">
+            <view class="product-groups-main-part product-groups-main-part1">01</view>
+            <view class="product-groups-main-part product-groups-main-part2">品牌：</view>
+            <view class="product-groups-main-part product-groups-main-part3">{{brand}}</view>
+            <view class="clear"></view>
+        </view>
+        <view class="product-groups-main-container">
+            <view class="product-groups-main-part product-groups-main-part1">02</view>
+            <view class="product-groups-main-part product-groups-main-part2">型号：</view>
+            <view class="product-groups-main-part product-groups-main-part3">{{kinds}}</view>
+            <view class="clear"></view>
+        </view>
+        <view class="product-groups-main-container">
+            <view class="product-groups-main-part product-groups-main-part1">03</view>
+            <view class="product-groups-main-part product-groups-main-part2">颜色：</view>
+            <view class="product-groups-main-part product-groups-main-part3">{{colour}}</view>
+            <view class="clear"></view>
+        </view>
+        <view class="product-groups-main-container">
+            <view class="product-groups-main-part product-groups-main-part1">04</view>
+            <view class="product-groups-main-part product-groups-main-part2">材质：</view>
+            <view class="product-groups-main-part product-groups-main-part3">{{material}}</view>
+            <view class="clear"></view>
+        </view>
+        <view class="product-groups-main-container">
+            <view class="product-groups-main-part product-groups-main-part1">05</view>
+            <view class="product-groups-main-part product-groups-main-part2">尺寸：</view>
+            <view class="product-groups-main-part product-groups-main-part3">{{size}}</view>
+            <view class="clear"></view>
+        </view>
+        
+    </view>
+
+</view>
+
+<view class="product-groups">  
+    <view class="product-main-center product-groups-title">产品展示</view>
+    <view class="product-main-center product-groups-name">PRODUCT DEMONSTRATION</view>
+    <view>
+        <image wx:for="{{imgUrls}}" class="product-main-img" src="{{item}}" mode='widthFix'></image>
+
+    </view>
+</view>
+
+</view>
+<!--加入购物车弹出框-->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class='addcar'>
+        <view class="addcar-left">
+            <image src="../../img/1.png"  mode="widthFix"></image>
+        </view>
+        <view class="addcar-right">
+            
+            <image bindtap="hideModal" class="close" src="../../img/close.png"   mode="widthFix"></image>
+            
+            <view class="addcar-name">{{goods_name}}</view>
+            <view class="addcar-desc">原装正品防风机，独立设计，经典经典的今后的蛋糕</view>
+            <view class="price-num">
+                <view class="addcar-price">
+                    <view class="addcar-price-view">
+                        ￥{{price}}
+                    </view>
+                </view>
+                <view class="addcar-num">
+                    <text>库存数：</text>
+                    <text>{{kucun}}</text>
+                    <view class="clear"></view>
+                </view>
+                <view class="clear"></view>
+            </view>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view class="hr"></view>
+    <view class="all-num">
+        <view class="all-num-left">数量</view>
+        <view class="all-num-right">
+            <view bindtap="reduceNum" class="num-cal">-</view>
+            <view class="num-cal num-cal-mid">
+                <input bindinput="changeNum" type="text"  value="{{inputTxt}}" />
+            </view>
+            <view bindtap="addNum" class="num-cal">+</view>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view class="hr"></view>
+    <view class="num-zanwei"></view>
+    <view class="addcar-footer">
+        <view class="addcar-footer-left">
+            <view class="addcar-footer-left-l">应付金额：</view>
+            <view class="addcar-footer-left-r">{{price*inputTxt}}元</view>
+            <view class="clear"></view>
+        </view>
+        <view class="addcar-footer-right" bindtap="addToCar" data-id="{{goods_id}}">加入购物车</view>
+        <view class="clear"></view>
+    </view>
+</view>
+<!--立即购买弹出框-->
+<view class="commodity_screen" bindtap="hideModal2" wx:if="{{showModalStatus2}}"></view>
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus2}}">
+    <view class='addcar'>
+        <view class="addcar-left">
+            <image src="../../img/1.png"  mode="widthFix"></image>
+        </view>
+        <view class="addcar-right">
+            
+            <image bindtap="hideModal2" class="close" src="../../img/close.png"   mode="widthFix"></image>
+            
+            <view class="addcar-name">{{goods_name}}</view>
+            <view class="addcar-desc">原装正品防风机，独立设计，经典经典的今后的蛋糕</view>
+            <view class="price-num">
+                <view class="addcar-price">
+                    <view class="addcar-price-view">
+                        ￥{{price}}
+                    </view>
+                </view>
+                <view class="addcar-num">
+                    <text>库存数：</text>
+                    <text>{{kucun}}</text>
+                    <view class="clear"></view>
+                </view>
+                <view class="clear"></view>
+            </view>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view class="hr"></view>
+    <view class="all-num">
+        <view class="all-num-left">数量</view>
+        <view class="all-num-right">
+            <view bindtap="reduceNum" class="num-cal">-</view>
+            <view class="num-cal num-cal-mid">
+                <input bindinput="changeNum" type="text"  value="{{inputTxt}}" />
+            </view>
+            <view bindtap="addNum" class="num-cal">+</view>
+        </view>
+        <view class="clear"></view>
+    </view>
+    <view class="hr"></view>
+    <view class="num-zanwei" bindtap="toChangAddress">
+        <image class="address-img" src="../../img/Address.png" mode="widthFix"></image>
+        <view class="address-detail">{{default_address}}</view>
+        <view class="clear"></view>
+
+        <image class="address-img" style="visibility: hidden" src="../../img/Address.png" mode="widthFix"></image>
+        <view class="address-detail address-detail2">（点击修改默认收货地址）</view>
+        <view class="clear"></view>
+    </view>
+    <view class="addcar-footer">
+        <view class="addcar-footer-left">
+            <view class="addcar-footer-left-l">应付金额：</view>
+            <view class="addcar-footer-left-r">{{price*inputTxt}}元</view>
+            <view class="clear"></view>
+        </view>
+        <view class="addcar-footer-right" bindtap="immybuy" data-id="{{goods_id}}">暂不支持购买</view>
+        <view class="clear"></view>
+    </view>
+</view>
+<view class="temp"></view>
+
+<!-- 底部悬浮栏 -->
+<view class="detail-nav">
+    <view class="nav-btn">
+        <navigator url="/pages/shoppingCar/shoppingCar" hover-class="navigator-hover">
+            <view>
+                <image src="../../img/shopping-car.png"   mode="widthFix"></image>
+            </view>
+        </navigator>
+    </view>
+    <button class="button-black nav-btn" bindtap="showModal" formType="submit">加入购物车</button>
+    <button class="button-red nav-btn" bindtap="showModal2" formType="submit">立即购买</button>
+</view>
+
+

@@ -1,0 +1,58 @@
+<view class="header">收件人信息</view>
+<view class="content">
+    <view class="content-section">
+        <input type="text" bindinput="inputChangeName" value="{{name}}" placeholder="收件人姓名" />
+    </view>
+    <view class="content-section">
+        <input type="text" bindinput="inputChangeMobile" value="{{mobile}}" placeholder="电话号码" />
+    </view>
+    <view class="content-section">
+        <view class="section">
+            <picker class="picker" bindchange="provinceChange"  range="{{provinceArray}}" range-key="area_name">
+                <view >{{province}}</view>
+            </picker>
+            <picker class="picker" bindchange="cityChange"  range="{{cityArray}}" range-key="area_name">
+                <view >{{city}}</view>
+            </picker>
+            <picker class="picker" bindchange="areaChange"  range="{{areaArray}}" range-key="area_name">
+                <view >{{area}}</view>
+            </picker>
+        </view>
+    </view>
+    <view class="content-section">
+        <input type="text" bindinput="inputChangeAddress" value="{{address}}" placeholder="详细地址" />
+    </view>
+    <view class="content-section">
+        <input type="text" bindinput="inputChangeMail" value="{{zip_code}}" placeholder="邮政编码" />
+    </view>
+</view>
+<!--
+<view class='content-section' style='border-bottom:1px solid gainsboro'>
+    <view class="isdefault">
+        <view class='isdefault-left'>设置为默认地址</view>
+        <view class='isdefault-right'>
+            <icon bindtap="checkAddress"  wx:if="{{is_default}}" type="success" color="#F76260" class="checks" mode="widthFix" />
+            <icon bindtap="checkAddress" wx:else type="circle" class="checks" mode="widthFix" />
+        </view>
+        <view class="clear"></view>
+    </view>
+</view>
+-->
+
+<view class="toast_mask" wx:if="{{isShowToast}}"></view>  
+<!--以下为toast显示的内容-->  
+<view class="toast_content_box" wx:if="{{isShowToast}}">  
+  <view class="toast_content">  
+    <view class="toast_content_text">  
+      {{toastText}}  
+    </view>  
+  </view>  
+</view>  
+
+
+<view class="seat"></view>
+<view class="footer">
+    <view class="footer-left" bindtap='cancle'>取消</view>
+    <view class="footer-right" bindtap="addAddress">保存</view>
+    <view class="clear"></view>
+</view>

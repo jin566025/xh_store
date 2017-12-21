@@ -1,0 +1,30 @@
+<view class="header">地址簿</view>
+<view class="address">
+    <view class="address-section" wx:for="{{addressArray}}">
+        <view class="address-section-container">
+            <view>
+                <view class="address-section-name">收货人：{{item.name}}</view>
+                <view class="address-section-default" >
+                        <icon bindtap='setDefault' data-id="{{item.id}}"  wx:if="{{item.is_default=='1'}}" type="success" color="#F76260" data-index="{{index}}" class="checks" mode="widthFix" />
+                        <icon bindtap='setDefault' data-id="{{item.id}}" wx:else data-index="{{index}}" type="circle" class="checks" mode="widthFix" />
+                        默认地址
+                </view>
+                <view class="clear"></view>
+            </view>
+            
+            <view class="address-detail">
+                {{item.address}}
+            </view>
+            <view class="address-edit">
+                <view class="address-edits">
+                    <view class="address-edits2" bindtap="editAddress" data-id="{{item.id}}">编辑</view>
+                    <view class="address-edits2" bindtap="deleteAddress" data-id="{{item.id}}">删除</view>
+                    <view class="clear"></view>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+</view>
+<view class="seat"></view>
+<view class="footer" bindtap="toAddAddress">添加地址</view>
