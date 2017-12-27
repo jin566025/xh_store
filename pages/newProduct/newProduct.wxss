@@ -29,13 +29,13 @@
 }
 
 .products{
-    margin-top: 40rpx;
+    margin-top: 40rpx
 }
 .product{
     width: 46%;text-align: center;margin: 0 2%;padding-bottom: 50rpx
 }
 .product-left{
-    display: inline-block
+    float: left;
 }
 .product-right{
     float: right;
@@ -48,10 +48,10 @@
 }
 
 .product-name{
-    font-size: 30rpx;margin: 15rpx 0;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+    font-size: 30rpx;margin: 15rpx 0
 }
 .product-price{
-    font-size: 25rpx;
+    font-size: 25rpx
 }
 
 .hr{
@@ -80,27 +80,16 @@
 .slide-image{
     width: 100%
 }
-.scroll-view-item_H bc_green{
-    text-align: center;
-}
+
 .scroll-view-item_H{
-   display: inline-block;width:60%;text-align: center;background-color: #E9E9EC;margin: 0 2%;border-radius: 5px
+   display: inline-block;width: 70%;
 }
 .scroll-view-item_H image{
-    width: 150px;border-radius: 5px;height: 150px;text-align: center
+    width: 100%;border-radius: 5px
 }
 .bc_mid{
     width: 5%;visibility: hidden
 }
 .scroll-view_H{
     white-space: nowrap;margin-top: 30rpx;height: 150px
-}
-
-
-#swiper{
-    height: 240px
-}
-
-.section1{
-    margin-top: 30rpx
 }

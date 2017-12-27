@@ -12,7 +12,8 @@ Page({
     interval: 3000,
     duration: 1000,
     hotgoods:[],
-    allgoods:[]
+    allgoods:[],
+    newgoods:[]
   },
   
   onLoad: function () {
@@ -38,7 +39,7 @@ Page({
 
             if (res.errMsg == "request:ok"){
                 var images = res.data.data;
-                
+                console.log(res)
                 var array = [];
                 for(var i=0;i<images.length;i++){
                     array.push(images[i].image_url)
@@ -53,6 +54,31 @@ Page({
         }
     })
 
+
+    //获取新商品
+    wx.request({
+        url: this.data.url_path + "/api/get_goods",
+        data: {
+            type: "1",
+            per_page: "6"
+        },
+        header: { 'content-type': 'application/x-www-form-urlencoded' },
+        method: "post",
+        success: function (res) {
+
+            var new_goods = res.data.data;
+            console.log(new_goods)
+            var array = [];
+            for (var i = 0; i < new_goods.length; i++) {
+                array.push(new_goods[i])
+            }
+            that.setData({
+                newgoods: array
+            })
+        },
+        fail: function () { }
+
+    })
     //获取热销商品列表
 
     wx.request({

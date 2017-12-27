@@ -7,19 +7,24 @@
     </swiper-item>
   </block>
 </swiper>
+<view class='section section1'>
+    <view class="section-head">
+        <view class="section-head-left">
+            <view class="section-head-left-top">NEWEST SELLER<text class="hide">占</text></view>
+            <view class="section-head-left-bottom">最新商品</view>
+        </view>
+        <navigator url="/pages/newProduct/newProduct" hover-class="navigator-hover">
+            <view class="section-head-right">...</view>
+        </navigator>
+        <view class="clear"></view>
+    </view>
+    <scroll-view class="scroll-view_H" scroll-x>
+        <view wx:for="{{newgoods}}" id="green" class="scroll-view-item_H bc_green"  bindtap="getGoodId" data-id="{{item.goods_id}}">
+            <image src="{{item.goods_images}}"></image>
+        </view>
+    </scroll-view>
+</view>
 
-<scroll-view class="scroll-view_H" scroll-x style="width: 96%;margin:20rpx 2%">
-    <view id="green" class="scroll-view-item_H bc_green">
-        <image src="../../img/e.jpg"></image>
-    </view>
-    <view class="scroll-view-item_H bc_mid">
-        <image src="../../img/zanwei.jpg"></image>
-    </view>
-    <view id="red"  class="scroll-view-item_H bc_red">
-        <image src="../../img/f.jpg"></image>
-    </view>
-  
-</scroll-view>
 <view class="hr"></view>
 <view class="section">
     <view class="section-head">

@@ -15,7 +15,8 @@
         "pages/orderPinjia/orderPinjia",
         "pages/orderShouhou/orderShouhou",
         "pages/orderShouhuo/orderShouhuo",
-        "pages/orderFahuo/orderFahuo"
+        "pages/orderFahuo/orderFahuo",
+        "pages/newProduct/newProduct"
     ],
     "window": {
         "backgroundTextStyle": "light",
