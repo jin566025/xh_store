@@ -1,6 +1,7 @@
 <!-- banner -->
+<page>
 <view class='color'>
-    <image src='../../img/color.png' mode='widthFix' bindtap='changeColor'></image>
+    <image lazy-load="true" src='../../img/color.png' mode='widthFix' bindtap='changeColor'></image>
 </view>
 <view class='color-shadow' bindtap='closecolors' wx:if="{{colorshow}}"></view>
 <view class='color-select' wx:if="{{colorshow}}">
@@ -11,7 +12,7 @@
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+      <image lazy-load="true" src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -74,7 +75,7 @@
     <view class="product-main-center product-groups-title">产品展示</view>
     <view class="product-main-center product-groups-name">PRODUCT DEMONSTRATION</view>
     <view>
-        <image wx:for="{{imgUrls}}" class="product-main-img" src="{{item}}" mode='widthFix'></image>
+        <image lazy-load="true" wx:for="{{imgUrls}}" class="product-main-img" src="{{item}}" mode='widthFix'></image>
 
     </view>
 </view>
@@ -210,3 +211,4 @@
 </view>
 
 
+</page>

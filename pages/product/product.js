@@ -13,9 +13,7 @@ Page({
         circular:true,
         // 商品详情介绍
         detailImg: [
-            "../../img/a.jpg",
-            "../../img/b.jpg",
-            "../../img/c.jpg"
+           
         ],
         showModalStatus: false,
         showModalStatus2: false,

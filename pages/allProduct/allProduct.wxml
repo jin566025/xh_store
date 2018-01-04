@@ -1,4 +1,5 @@
 <!--pages/allProduct/allProduct.wxml-->
+<page>
 <view class="section">
     <view class="section-head">
         <view class="section-head-left">所有商品</view>
@@ -9,7 +10,7 @@
         <view class="products">
             <view wx:for="{{goods}}" class="product product-left" bindtap="getGoodId" data-id="{{item.goods_id}}">
                 <view class="product-img" >
-                    <image class="product-imgs" src="{{item.goods_images}}"  mode="widthFix"></image>
+                    <image lazy-load='true' class="product-imgs" src="{{item.goods_images}}"  mode="widthFix"></image>
                 </view>
                 <view class="product-name">
                     <text>{{item.goods_name}}</text>
@@ -23,3 +24,4 @@
     </view>
 </view>
 
+</page>

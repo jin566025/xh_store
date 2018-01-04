@@ -1,9 +1,10 @@
 <!--index.wxml-->
+<page>
 <swiper id="swiper" indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"  mode="widthFix"/>
+      <image lazy-load="true" src="{{item}}" class="slide-image"  mode="widthFix"/>
     </swiper-item>
   </block>
 </swiper>
@@ -20,7 +21,7 @@
     </view>
     <scroll-view class="scroll-view_H" scroll-x>
         <view wx:for="{{newgoods}}" id="green" class="scroll-view-item_H bc_green"  bindtap="getGoodId" data-id="{{item.goods_id}}">
-            <image src="{{item.goods_images}}"></image>
+            <image lazy-load="true" src="{{item.goods_images}}"></image>
         </view>
     </scroll-view>
 </view>
@@ -41,7 +42,7 @@
         <view class="products">
             <view wx:for="{{hotgoods}}" class="product product-left" bindtap="getGoodId" data-id="{{item.goods_id}}">
                 <view class="product-img" >
-                    <image class="product-imgs" src="{{item.goods_images}}"  mode="widthFix"></image>
+                    <image lazy-load="true" class="product-imgs" src="{{item.goods_images}}"  mode="widthFix"></image>
                 </view>
                 <view class="product-name">
                     <text>{{item.goods_name}}</text>
@@ -71,7 +72,7 @@
  
             <view wx:for="{{allgoods}}" class="product product-left" bindtap="getGoodId" data-id="{{item.goods_id}}">
                 <view class="product-img">
-                    <image class="product-imgs" src="{{item.goods_images}}"  mode="widthFix"></image>
+                    <image class="product-imgs" lazy-load="true" src="{{item.goods_images}}"  mode="widthFix"></image>
                 </view>
                 <view class="product-name">
                     <text>{{item.goods_name}}</text>
@@ -122,3 +123,4 @@
     <text>{{code}}</text>
   </view>
 </view>
+</page>

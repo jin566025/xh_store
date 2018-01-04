@@ -17,6 +17,7 @@ Page({
   },
   
   onLoad: function () {
+
     if(app.getcode.code){
       this.setData({
         code: app.getcode.code
