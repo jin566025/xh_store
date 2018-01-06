@@ -1,5 +1,19 @@
 const app = getApp()
 Page({
+    onShareAppMessage: function () {
+        var goodId = this.data.goodId
+        console.log("goodId:" + goodId)
+        return {
+
+            title: '打火机',
+
+            desc: '打火机',
+
+            path: "/pages/product/product?goodId=" + goodId
+
+        }
+
+    },
     data: {
         isLike: true,
         // banner
@@ -59,7 +73,8 @@ Page({
     
         this.setData({
             url_path: app.getUrl.url,
-            member_id: app.getMember.member_id
+            member_id: app.getMember.member_id,
+            goodId: goodId
         })
         wx.request({
             url: this.data.url_path + "/api/get_good_detail",
@@ -71,7 +86,7 @@ Page({
             success: res =>  {
 
                 var goods = res.data.data;
-                console.log(goods)
+              
                 var goods_describe2 = goods.goods_describe;
                 goods_describe2 = goods_describe2.replace("<p>","");
                 goods_describe2 = goods_describe2.replace("</p>", "");
@@ -101,8 +116,7 @@ Page({
 
                 })
                 var colour = this.data.colour.split("、");
-                console.log(colour[0])
-                console.log(this.data.goods_id)
+              
                 wx.request({
                     url: this.data.url_path + "/api/get_goods_images",
                     data:{
@@ -199,13 +213,13 @@ Page({
             header: { 'content-type': 'application/x-www-form-urlencoded' },
             method: "post",
             success:res=>{
-                console.log(res)
+               
             },
             fail:function(){}
         })
         goodArray.push(goods);
         goodArray = JSON.stringify(goodArray);
-        console.log(goodArray);
+    
         wx.request({
             url: this.data.url_path +"/api/add_order",
             data:{
@@ -216,7 +230,7 @@ Page({
             header: { 'content-type': 'application/x-www-form-urlencoded' },
             method: "post",
             success:res=>{
-                console.log(res)
+                
                 if (res.data.error_msg){
                     wx.showToast({
                         title: '购买成功',
@@ -437,7 +451,7 @@ Page({
             method: "post",
             success: res => {
                 var colorimage = res.data.data;
-                console.log(colorimage)
+             
                 var good_images_array = colorimage.images.split(",");
                 this.setData({
                     imgUrls: good_images_array

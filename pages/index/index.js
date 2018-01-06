@@ -55,7 +55,30 @@ Page({
         }
     })
 
+//    //获取轮播图
+//     wx.request({
+//         url: this.data.url_path + "/api/get_goods",
+//         data: {
+//             type: "3",
+//             per_page: "6"
+//         },
+//         header: { 'content-type': 'application/x-www-form-urlencoded' },
+//         method: "post",
+//         success: function (res) {
 
+//             var new_goods = res.data.data;
+//             console.log(new_goods)
+//             var array = [];
+//             for (var i = 0; i < new_goods.length; i++) {
+//                 array.push(new_goods[i])
+//             }
+//             that.setData({
+//                 imgUrls: array
+//             })
+//         },
+//         fail: function () { }
+
+//     })
     //获取新商品
     wx.request({
         url: this.data.url_path + "/api/get_goods",
@@ -68,7 +91,7 @@ Page({
         success: function (res) {
 
             var new_goods = res.data.data;
-            console.log(new_goods)
+           
             var array = [];
             for (var i = 0; i < new_goods.length; i++) {
                 array.push(new_goods[i])
@@ -118,7 +141,7 @@ Page({
         success: function (res) {
             
             var all_goods = res.data.data;
-            console.log(all_goods)
+            
             var array = [];
             for (var i = 0; i < all_goods.length; i++) {
                 array.push(all_goods[i])

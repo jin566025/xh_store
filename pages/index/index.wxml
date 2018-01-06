@@ -4,7 +4,7 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image lazy-load="true" src="{{item}}" class="slide-image"  mode="widthFix"/>
+      <image lazy-load="true" src="{{item}}" class="slide-image"  mode="aspectFit"/>
     </swiper-item>
   </block>
 </swiper>
@@ -21,7 +21,7 @@
     </view>
     <scroll-view class="scroll-view_H" scroll-x>
         <view wx:for="{{newgoods}}" id="green" class="scroll-view-item_H bc_green"  bindtap="getGoodId" data-id="{{item.goods_id}}">
-            <image lazy-load="true" src="{{item.goods_images}}"></image>
+            <image mode='widthFix' lazy-load="true" src="{{item.goods_images}}"></image>
         </view>
     </scroll-view>
 </view>
